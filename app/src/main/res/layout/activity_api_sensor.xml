@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Probar API Sensor Data"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextToken"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Token de autenticación"
+        android:text="example-token-123"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:backgroundTint="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp" />
+
+    <EditText
+        android:id="@+id/editTextStartTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Start Time (ms)"
+        android:text="0"
+        android:inputType="number"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:backgroundTint="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@id/editTextToken"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp" />
+
+    <EditText
+        android:id="@+id/editTextEndTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="End Time (ms)"
+        android:text="9999999999999"
+        android:inputType="number"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:backgroundTint="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@id/editTextStartTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp" />
+
+    <Button
+        android:id="@+id/buttonSendRequest"
+        style="@style/AppButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Enviar Solicitud"
+        app:layout_constraintTop_toBottomOf="@id/editTextEndTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="16dp" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonSendRequest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/textViewResponse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Respuesta de la API aparecerá aquí"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"
+            android:padding="8dp"
+            android:background="@android:color/white" />
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
